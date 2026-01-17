@@ -1,0 +1,28 @@
+{
+  "name": "proxy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all -p proxy s1 s2 s3",
+    "proxy":"node --watch ./src/proxy.js",
+    "s1":"node --watch ./src/server1.js",
+    "s2":"node --watch ./src/server2.js",
+    "s3":"node --watch ./src/server3.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "saludo1":"echo \"hola...!!!\"",
+    "saludo2":"echo \"chau...!!!\"",
+    "saludos":"start npm run saludo1 & start npm run saludo2",
+    "start1":"start npm run proxy & start npm run s1 & start npm run s2 & start npm run s3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.3"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
